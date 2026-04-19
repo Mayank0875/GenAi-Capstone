@@ -1,9 +1,15 @@
 pandas
 numpy
-
 matplotlib
 seaborn
 scikit-learn
 xgboost
 joblib
 streamlit
+
+# Milestone 2 – GenAI Agent
+langchain-groq
+langchain-core
+langchain-community
+langgraph
+python-dotenv
