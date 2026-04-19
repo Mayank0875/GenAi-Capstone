@@ -1,136 +1,95 @@
-# House Price Prediction System
+# 🏠 House Price Prediction & AI Advisor
 
-## 📌 Project Overview
-
-The **House Price Prediction System** is an end-to-end Machine Learning project designed to predict house prices using structured real estate data.
-
-This project demonstrates the complete ML lifecycle:
-
-- Data Cleaning  
-- Feature Engineering  
-- Data Preprocessing  
-- Model Training (XGBoost)  
-- Hyperparameter Tuning  
-- Model Evaluation  
-- Deployment using Streamlit  
-
-The system is modular, scalable, and production-ready.
+An end-to-end system that predicts house prices using ML and provides AI-based reasoning, recommendations, and interactive chat — combining **XGBoost + LangGraph + Groq LLM + RAG**.
 
 ---
 
-## Objectives
+## 🎯 Objectives
 
-- Predict house prices using regression techniques  
-- Improve performance through feature engineering  
-- Use **XGBoost Regressor** for strong predictive accuracy  
-- Apply **GridSearchCV** for hyperparameter tuning  
-- Deploy an interactive web app using **Streamlit**  
+- Predict house prices accurately using XGBoost
+- Generate AI explanations and investment recommendations
+- Use EDA insights as a RAG knowledge base
+- Enable follow-up queries through a chatbot
 
 ---
 
-## System Workflow
+## ⚙️ Workflow
 
 ```
-Raw Data
-   ↓
-Data Cleaning (Outlier Removal + Feature Engineering)
-   ↓
-Preprocessing (Scaling + Encoding)
-   ↓
-XGBoost Model Training
-   ↓
-Model Evaluation (R², MSE, RMSE)
-   ↓
-Model Saved as house_price_model.pkl
-   ↓
-Streamlit App for Real-Time Prediction
+User Input → ML Model (XGBoost) → RAG (EDA Insights) → LLM (Groq) → Analysis + Chat
 ```
 
 ---
 
-## Technology Stack
+## 🛠 Tech Stack
 
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-Learn  
-- XGBoost  
-- Joblib  
-- Streamlit  
-
----
-
-## Model Performance
-
-**Final Model:** XGBoost Regressor  
-
-- **R² Score:** 0.776  
-- **MSE:** 1.04 × 10¹⁰  
-- **RMSE:** ≈ 102,000  
-
-The model explains approximately **77.6% of the variance** in house prices.
+| | |
+|---|---|
+| ML | XGBoost, Scikit-learn |
+| Agent | LangGraph, LangChain |
+| LLM | Groq API (llama-3.1-8b-instant) |
+| UI | Streamlit |
+| Data | Pandas, NumPy |
 
 ---
 
-## Project Structure
+## 📊 Model Performance
+
+| Metric | Value |
+|---|---|
+| R² Score | 0.776 |
+| RMSE | ~$102,000 |
+
+---
+
+## 📁 Project Structure
 
 ```
-House-Price-Prediction/
-│
-├── data/
-│   └── dataset.csv
-│
-├── model.py
-├── app.py
-├── house_price_model.pkl
-├── requirements.txt
-└── README.md
+├── nodes/               # LangGraph nodes
+│   ├── input_node.py
+│   ├── prediction_node.py
+│   └── llm_agent_node.py
+├── rag/                 # RAG module
+│   ├── eda_context.py
+│   ├── retriever.py
+│   └── advisor.py
+├── components/          # ML pipeline
+├── agent_graph.py       # Pipeline assembly
+├── app.py               # Streamlit app
+├── model.py             # Model training
+└── house_price_model.pkl
 ```
 
 ---
 
-## Installation & Usage
-
-### Install Dependencies
+## 🚀 How to Run
 
 ```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-### Train the Model
+# Add your Groq API key
+echo "GROQ_API_KEY=your_key_here" > .env
 
-```bash
+# Train model (if needed)
 python model.py
-```
 
-This will generate:
-
-- `house_price_model.pkl`
-
-### Run the Streamlit App
-
-```bash
+# Run app
 streamlit run app.py
 ```
 
 ---
 
-## Features
+## ✨ Features
 
-- End-to-end ML pipeline  
-- Clean and modular code structure  
-- Hyperparameter tuning with GridSearchCV  
-- Production-ready model serialization  
-- Interactive UI for real-time predictions  
-
----
-
-## Conclusion
-
-This project showcases a complete machine learning lifecycle from data preprocessing to deployment. It reflects strong practical understanding of regression modeling and real-world structured data prediction.
+- ML-based price prediction
+- AI-powered analysis and investment advice
+- RAG using EDA insights
+- LangGraph 3-node agent pipeline
+- Interactive chatbot with memory
 
 ---
 
-## Author
+## 👤 Author
 
-**Mayank Gupta**  
+**Mayank Gupta** — Enrollment No: 2401010267
