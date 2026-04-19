@@ -1,10 +1,3 @@
-"""
-nodes/llm_agent_node.py
------------------------
-Node 3 — retrieves relevant EDA context and calls the Groq LLM advisor
-to generate a full property analysis and investment recommendation.
-"""
-
 from typing import TYPE_CHECKING
 from rag.retriever import retrieve_context
 from rag.advisor import generate_analysis

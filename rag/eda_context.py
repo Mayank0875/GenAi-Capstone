@@ -1,10 +1,3 @@
-"""
-rag/eda_context.py
-------------------
-Extracts EDA insights from training data and returns structured text
-that serves as the knowledge base for the LLM agent.
-"""
-
 import pandas as pd
 
 

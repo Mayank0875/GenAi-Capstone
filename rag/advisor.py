@@ -1,11 +1,3 @@
-"""
-rag/advisor.py
---------------
-LangChain + Groq LLM chains:
-  - generate_analysis()  → full property analysis + investment recommendation
-  - answer_followup()    → conversational follow-up with chat history
-"""
-
 import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq

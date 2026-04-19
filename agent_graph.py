@@ -1,11 +1,3 @@
-"""
-agent_graph.py
---------------
-Assembles the LangGraph node-based pipeline from modular nodes.
-
-Flow:  input_node → prediction_node → llm_agent_node → END
-"""
-
 from typing import TypedDict, Any
 from langgraph.graph import StateGraph, END
 

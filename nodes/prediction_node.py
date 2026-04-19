@@ -1,9 +1,3 @@
-"""
-nodes/prediction_node.py
-------------------------
-Node 2 — runs the trained XGBoost ML model and stores the predicted price.
-"""
-
 from typing import TYPE_CHECKING
 from predict import predict_house_price
 

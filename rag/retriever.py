@@ -1,10 +1,3 @@
-"""
-rag/retriever.py
-----------------
-RAG-style retriever — splits EDA context into sections and returns
-only the relevant ones based on keywords in the query.
-"""
-
 from rag.eda_context import EDA_CONTEXT
 
 

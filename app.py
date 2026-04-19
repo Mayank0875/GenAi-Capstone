@@ -1,12 +1,3 @@
-"""
-app.py
-------
-Streamlit app for House Price Prediction + GenAI Agent (Milestone 2).
-  - Property input form in a clean multi-column grid
-  - Prediction + AI analysis results
-  - Chat interface at the bottom
-"""
-
 import streamlit as st
 from agent_graph import run_agent
 from rag.advisor import answer_followup
@@ -14,7 +5,7 @@ from rag.retriever import retrieve_context
 
 st.set_page_config(page_title="House Price AI Advisor", layout="wide")
 
-# ── Session state init ────────────────────────────────────────────────────────
+# session state init 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 if "last_result" not in st.session_state:
@@ -22,12 +13,13 @@ if "last_result" not in st.session_state:
 if "last_input" not in st.session_state:
     st.session_state.last_input = None
 
-# ── Header ────────────────────────────────────────────────────────────────────
+#header
+
 st.title("🏠 House Price AI Advisor")
 st.caption("Powered by XGBoost + LangGraph + Groq LLM")
 st.markdown("---")
 
-# ── Property Input Form ───────────────────────────────────────────────────────
+#form
 st.subheader("📋 Property Details")
 
 c1, c2, c3 = st.columns(3)
@@ -83,7 +75,7 @@ if predict_btn:
         st.session_state.last_input  = property_input
         st.session_state.chat_history = []
 
-# ── Results ───────────────────────────────────────────────────────────────────
+# output
 if st.session_state.last_result and not st.session_state.last_result["error"]:
     result = st.session_state.last_result
     st.markdown("---")
@@ -97,7 +89,7 @@ if st.session_state.last_result and not st.session_state.last_result["error"]:
     st.subheader("🤖 AI Analysis")
     st.markdown(result["analysis"])
 
-# ── Chat Interface ────────────────────────────────────────────────────────────
+# chat box
 st.markdown("---")
 st.subheader("💬 Ask the AI Advisor")
 

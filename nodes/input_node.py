@@ -1,10 +1,3 @@
-"""
-nodes/input_node.py
--------------------
-Node 1 — validates and normalises user property input.
-Adds derived features (total_sqft, bath_per_bed) expected by the ML model.
-"""
-
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
